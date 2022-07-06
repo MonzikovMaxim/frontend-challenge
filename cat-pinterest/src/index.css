@@ -1,0 +1,11 @@
+html {
+  font-size: 62.5%;
+}
+
+body {
+  margin: 0 auto;
+  color:#444;
+  display: block;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

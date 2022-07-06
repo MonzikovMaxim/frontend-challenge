@@ -1,0 +1,44 @@
+@import "~loaders.css/src/animations/line-spin-fade-loader.scss";
+
+.loader-active {
+  display: block;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  width: 50px;
+  height: 50px;
+  color:red;
+  animation: fadeOut 1s 1s;
+  animation-fill-mode: forwards;
+}
+
+
+.app {
+  font-family: "Roboto", "Times New Roman", Times, serif;
+  color: blue;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+.container {
+  box-sizing: border-box;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 60px;
+  text-align: center;
+
+}
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 225px);
+  grid-template-rows: repeat(3, 225px);
+  gap: 45px;
+  margin: 0 auto;
+  padding: 0;
+  
+}
+
