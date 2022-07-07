@@ -10,8 +10,8 @@ function App() {
       <div className="app">
           <Navbar />
           <Routes>
-            <Route path="/" element={<Main />}></Route>
-            <Route path="/likes" element={<SavedCards />} />
+            <Route path="/frontend-challenge" element={<Main />}></Route>
+            <Route path="/frontend-challenge/likes" element={<SavedCards />} />
           </Routes>
         </div>
     </BrowserRouter>
