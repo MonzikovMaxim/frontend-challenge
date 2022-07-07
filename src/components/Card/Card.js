@@ -1,10 +1,11 @@
 import React from "react";
 import "./Card.scss";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const Card = (props) => {
   const { cards, url } = props;
   const location = useLocation();
+  let history = useNavigate()
 
   function addCard(cards) {
     let likedCards = JSON.parse(localStorage.getItem("likedCards")) || [];
@@ -19,10 +20,11 @@ const Card = (props) => {
     });
     localStorage.setItem("likedCards", JSON.stringify(newArr));
     window.location.reload()
+    history("/frontend-challenge/likes")
   }
 
 
-  return location.pathname !== "/likes" ? (
+  return location.pathname !== "/frontend-challenge/likes" ? (
     <div className="card__container">
       <div className="card">
         <img className="card__image" src={url} alt="cat"></img>
