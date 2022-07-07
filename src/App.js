@@ -5,6 +5,7 @@ import SavedCards from "./components/SavedCards/SavedCards";
 import Navbar from "./components/Navbar/Navbar";
 
 function App() {
+  
   return (
     <BrowserRouter>
       <div className="app">

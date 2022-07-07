@@ -1,11 +1,19 @@
-import React from "react";
+import React, {useEffect} from "react";
 import "./Card.scss";
 import { useLocation, useNavigate } from "react-router-dom";
 
 const Card = (props) => {
   const { cards, url } = props;
   const location = useLocation();
-  let history = useNavigate()
+
+const navigate = useNavigate()
+
+useEffect(() => {
+        navigate(JSON.parse(window.sessionStorage.getItem("likedCards") || '{}'))
+        window.onbeforeunload = () => {
+            window.sessionStorage.setItem("likedCards", JSON.stringify(window.location.pathname))
+        }
+    }, [])
 
   function addCard(cards) {
     let likedCards = JSON.parse(localStorage.getItem("likedCards")) || [];
@@ -20,7 +28,6 @@ const Card = (props) => {
     });
     localStorage.setItem("likedCards", JSON.stringify(newArr));
     window.location.reload()
-    history("/frontend-challenge/likes")
   }
 
 
