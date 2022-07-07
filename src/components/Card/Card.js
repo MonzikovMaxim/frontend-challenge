@@ -6,14 +6,17 @@ const Card = (props) => {
   const { cards, url } = props;
   const location = useLocation();
 
-const navigate = useNavigate()
+  // const navigate = useNavigate();
 
-useEffect(() => {
-        navigate(JSON.parse(window.sessionStorage.getItem("likedCards") || '{}'))
-        window.onbeforeunload = () => {
-            window.sessionStorage.setItem("likedCards", JSON.stringify(window.location.pathname))
-        }
-    }, [])
+  // useEffect(() => {
+  //   navigate(JSON.parse(window.sessionStorage.getItem("lastRoute") || "{}"));
+  //   window.onbeforeunload = () => {
+  //     window.sessionStorage.setItem(
+  //       "lastRoute",
+  //       JSON.stringify(window.location.pathname)
+  //     );
+  //   };
+  // }, []);
 
   function addCard(cards) {
     let likedCards = JSON.parse(localStorage.getItem("likedCards")) || [];
@@ -22,6 +25,7 @@ useEffect(() => {
   }
 
   function deleteCard(cards) {
+    
     let likedCards = JSON.parse(localStorage.getItem("likedCards")) || [];
     let newArr = likedCards.filter(function (c) {
       return c !== cards;
