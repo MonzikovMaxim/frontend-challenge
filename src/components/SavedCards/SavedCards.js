@@ -19,7 +19,7 @@ const SavedCards = () => {
       <div className="container">
         <div className="card-grid">
           {savedCardList.map((card) => {
-            return <Card key={Math.random()} cards={card} />;
+            return <Card key={card.id + 1} cards={card} />;
           })}
         </div>
       </div>

@@ -14,7 +14,7 @@
   }
 
   &:hover .card__like,
-  &:hover .card__like--active {
+  &:hover .card__like-clicked {
     display: block;
   }
 }
@@ -36,18 +36,13 @@
   background-image: url("../../images/like.png");
   background-color: inherit;
   border: none;
-  display: none;
   cursor: pointer;
 
   &:hover {
     background-image: url("../../images/like-hover.png");
   }
 
-  &:active {
+  &:focus {
     background-image: url("../../images/like-clicked.png");
-
-    &:hover {
-      background-image: url("../../images/like-hover.png");
-    }
   }
 }

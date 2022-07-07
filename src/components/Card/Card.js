@@ -3,10 +3,8 @@ import "./Card.scss";
 import { useLocation } from "react-router-dom";
 
 const Card = (props) => {
-  const { isLiked, cards, url } = props;
+  const { cards, url } = props;
   const location = useLocation();
-  const Like = `card__like ${isLiked ? "card__like-active" : ""}`;
-
 
   function addCard(cards) {
     let likedCards = JSON.parse(localStorage.getItem("likedCards")) || [];
@@ -20,6 +18,7 @@ const Card = (props) => {
       return c !== cards;
     });
     localStorage.setItem("likedCards", JSON.stringify(newArr));
+    window.location.reload();
   }
 
 
@@ -27,14 +26,14 @@ const Card = (props) => {
     <div className="card__container">
       <div className="card">
         <img className="card__image" src={url} alt="cat"></img>
-        <button onClick={() => addCard(url)} className={Like}></button>
+        <button onClick={() => addCard(url)} className="card__like"></button>
       </div>
     </div>
   ) : (
     <div className="card__container">
       <div className="card">
         <img className="card__image" src={cards} alt="cat"></img>
-        <button onClick={() => deleteCard(cards)} className={`card__like ${isLiked ? "card__like-active" : "card__like-active"}`}></button>
+        <button onClick={() => deleteCard(cards)} className="card__like"></button>
       </div>
     </div>
   );
