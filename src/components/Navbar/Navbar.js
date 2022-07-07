@@ -6,8 +6,8 @@ const Navbar = () => {
   return (
     <div className="nav__bar">
       <nav className="nav__container">
-      <NavLink className='nav__button' exact="true" activeclassname="active" to="/frontend-challenge">Все котики</NavLink>
-      <NavLink className='nav__button' exact="true" activeclassname="active" to="/frontend-challenge/likes">Любимые котики</NavLink>
+      <NavLink className='nav__button' activeclassname="active" to="/frontend-challenge">Все котики</NavLink>
+      <NavLink className='nav__button' activeclassname="active" to="/frontend-challenge/likes">Любимые котики</NavLink>
       </nav>
     </div>
   );

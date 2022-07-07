@@ -1,22 +1,10 @@
-import React, {useEffect} from "react";
+import React from "react";
 import "./Card.scss";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 const Card = (props) => {
   const { cards, url } = props;
   const location = useLocation();
-
-  // const navigate = useNavigate();
-
-  // useEffect(() => {
-  //   navigate(JSON.parse(window.sessionStorage.getItem("lastRoute") || "{}"));
-  //   window.onbeforeunload = () => {
-  //     window.sessionStorage.setItem(
-  //       "lastRoute",
-  //       JSON.stringify(window.location.pathname)
-  //     );
-  //   };
-  // }, []);
 
   function addCard(cards) {
     let likedCards = JSON.parse(localStorage.getItem("likedCards")) || [];
@@ -24,8 +12,7 @@ const Card = (props) => {
     localStorage.setItem("likedCards", JSON.stringify(likedCards));
   }
 
-  function deleteCard(cards) {
-    
+  function deleteCard(cards) { 
     let likedCards = JSON.parse(localStorage.getItem("likedCards")) || [];
     let newArr = likedCards.filter(function (c) {
       return c !== cards;
