@@ -11,7 +11,7 @@ function App() {
           <Navbar />
           <Routes>
             <Route path="/frontend-challenge" element={<Main />}></Route>
-            <Route path="/likes" element={<SavedCards />} />
+            <Route path="/frontend-challenge/likes" element={<SavedCards />} />
           </Routes>
         </div>
     </BrowserRouter>

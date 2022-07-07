@@ -18,7 +18,7 @@ const Card = (props) => {
       return c !== cards;
     });
     localStorage.setItem("likedCards", JSON.stringify(newArr));
-    window.location.reload();
+    window.location.reload()
   }
 
 
