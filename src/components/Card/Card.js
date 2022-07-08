@@ -22,7 +22,7 @@ const Card = (props) => {
   }
 
 
-  return location.pathname !== "/frontend-challenge/likes" ? (
+  return location.pathname !== "/likes" ? (
     <div className="card__container">
       <div className="card">
         <img className="card__image" src={url} alt="cat"></img>
