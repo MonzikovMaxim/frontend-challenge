@@ -26,14 +26,20 @@ const Card = (props) => {
     <div className="card__container">
       <div className="card">
         <img className="card__image" src={url} alt="cat"></img>
-        <button onClick={() => addCard(url)} className="card__like"></button>
+        <div className="card__like-container" >
+          <input className="card__like-checkbox" type="checkbox" id={url} />
+          <label htmlFor={url} onClick={() => addCard(url)} className="card__like-label"></label> 
+        </div>
       </div>
     </div>
   ) : (
     <div className="card__container">
       <div className="card">
         <img className="card__image" src={cards} alt="cat"></img>
-        <button onClick={() => deleteCard(cards)} className="card__like"></button>
+        <div className="card__like-container">
+          <input className="card__like-checkbox" defaultChecked type="checkbox" id={url} />
+          <label htmlFor={url} onClick={() => deleteCard(cards)} className="card__like-label"></label> 
+        </div>
       </div>
     </div>
   );

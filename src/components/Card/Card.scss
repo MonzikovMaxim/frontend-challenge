@@ -6,17 +6,18 @@
 .card {
   height: 225px;
   margin: 0;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  cursor: pointer;
 
   &:hover {
     transform: scale(1.1);
     box-shadow: 0px 6px 5px rgba(0, 0, 0, 0.24),
       0px 9px 18px rgba(0, 0, 0, 0.18);
+      .card__like-container {
+        opacity: 1;
+      }
   }
 
-  &:hover .card__like,
-  &:hover .card__like-clicked {
-    display: block;
-  }
 }
 
 .card__image {
@@ -25,24 +26,42 @@
   z-index: 0;
 }
 
-.card__like {
-  display: none;
-  position: absolute;
-  z-index: 1;
-  bottom: 29px;
-  right: 29px;
+
+.card__like-container {
   width: 40px;
   height: 36.3px;
-  background-image: url("../../images/like.png");
-  background-color: inherit;
-  border: none;
-  cursor: pointer;
+  position: absolute;
+  display: block;
+  bottom: 29px;
+  right: 29px;
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+  
 
-  &:hover {
-    background-image: url("../../images/like-hover.png");
+  .card__like-checkbox {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
   }
 
-  &:focus {
+  .card__like-label {
+    display: block;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+  }
+
+  .card__like-checkbox + .card__like-label {
+    background-image: url("../../images/like.png");
+  }
+
+  .card__like-checkbox:checked + .card__like-label {
     background-image: url("../../images/like-clicked.png");
+  }
+
+  .card__like-checkbox:hover:not(:checked) + .card__like-label {
+    background-image: url("../../images/like-hover.png");
   }
 }
